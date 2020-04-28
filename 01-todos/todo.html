@@ -9,77 +9,21 @@
 </head>
 
 <body>
-    <div class="container">
+
+    <div class="container d-flex justify-content-center">
+        <div class="sasa">
         <div class="form">
             <form action="">
-                <input type="checkbox">
-                <input type='text' placeholder="What needs to be done?">
+                <input class="form-checkbox" type="checkbox">
+                <input style="width: 600px;" type='text' placeholder="What needs to be done?">
             </form>
         </div>
+    </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.5.0.min.js"
         integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
 
-    <script>
-        let counter = 0;
-        $(document).ready(function () {
-            $('form').submit(function (event) {
-                counter++;
-                event.preventDefault();
-                let input_val = $('input[type="text"]').val();
-                $('input[type="text"]').val("");
-                let div_inputs = $('<div>');
-                let div_parent_input = $('<div>');
-                $('.form').append(div_parent_input);
-                div_parent_input.append(div_inputs);
-                div_inputs.addClass('div_inputs');
-                let check_box = $('<input>');
-                check_box.attr('type','checkbox');
-                div_inputs.append(check_box);
-                let input_text = $('<p>');
-                input_text.addClass('input_text');
-                input_text.text(input_val);
-                div_inputs.append(input_text);
-                let x_button = $('<span>');
-                x_button.addClass('close');
-                x_button.html('&times;');
-                div_inputs.append(x_button);
-                x_button.click(function(){
-                   $(this).parent().remove();
-                   counter--;
-                   footer_left_first.text(counter);
-                })
-                if(counter==1){
-                let footer_div = $('<div>');
-                $('.container').append(footer_div);
-                let footer_left_side = $('<span>');
-                let footer_center_side = $('<span>');
-                let footer_right_side = $('<span>');
-                footer_div.append(footer_left_side);
-                footer_div.append(footer_center_side);
-                footer_div.append(footer_right_side);
-                let footer_left_first = $('<span>');
-                let footer_left_second = $('<span>');
-                let footer_left_third = $('<span>');
-                footer_left_side.append(footer_left_first);
-                footer_left_side.append(footer_left_second);
-                footer_left_side.append(footer_left_third);
-                footer_left_first.text(counter);
-                footer_left_second.text('items');
-                footer_left_third.text('left');
-                }
-                footer_left_first.text(counter);
-            })
-            // <span class="close">&times;</span>
-            // var div_el = $('<div>');
-            // var body = $('body');
-
-            // $(body).append($(div_el));
-            // var div_input = $('<div>');
-            // $(div_el).append($(div_input));
-        })
-
-    </script>
+    <script src="todo.js"></script>
 </body>
 
 </html>
