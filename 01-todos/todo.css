@@ -1,0 +1,17 @@
+.form{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+
+}
+.div_inputs{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 270px;
+}
+.input_text{
+    width: 80%;
+    text-align: left !important;
+    
+}
